@@ -9,6 +9,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Debug mode. Throw debug exceptions only if debug is active.
   ([#392](https://github.com/jjriv/emogrifier/pull/392))
+- Added setting for putting the media query style block to <body> vs <head>
+  ([#396](https://github.com/jjriv/emogrifier/pull/396))
 - Support for CSS :not() selector.
   ([#395](https://github.com/jjriv/emogrifier/pull/395))
 

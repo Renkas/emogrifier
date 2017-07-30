@@ -1040,8 +1040,10 @@ class Emogrifier
         $styleAttribute->value = 'text/css';
         $styleElement->appendChild($styleAttribute);
 
-        $head = $this->getOrCreateHeadElement($document);
-        $head->appendChild($styleElement);
+        $body = $this->getBodyElement($document);
+        if ($body) {
+            $body->appendChild($styleElement);
+        }
     }
 
     /**
@@ -1062,6 +1064,18 @@ class Emogrifier
         }
 
         return $head;
+    }
+
+    /**
+     * Returns the existing body element in $document.
+     *
+     * @param \DOMDocument $document
+     *
+     * @return \DOMNode the body element
+     */
+    private function getBodyElement(\DOMDocument $document)
+    {
+        return $document->getElementsByTagName('body')->item(0);
     }
 
     /**
